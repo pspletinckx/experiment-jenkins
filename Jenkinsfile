@@ -14,7 +14,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       agent {
         docker {
           image 'alpine/git'
@@ -22,7 +22,7 @@ pipeline {
 
       }
       steps {
-        sh 'git clone https://git.shibboleth.net/git/java-opensaml'
+        git(url: 'git clone https://git.shibboleth.net/git/java-opensaml', branch: 'main')
       }
     }
 
