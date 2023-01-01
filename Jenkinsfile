@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'alpine/git'
-    }
-
-  }
+  agent any
   stages {
     stage('Stage1') {
       agent {
@@ -14,8 +9,7 @@ pipeline {
 
       }
       steps {
-        echo 'Hello'
-        sh 'git clone https://git.shibboleth.net/git/java-opensaml'
+        sh 'clone https://git.shibboleth.net/git/java-opensaml'
       }
     }
 
@@ -29,8 +23,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    Secret = 'mysecret'
   }
 }
