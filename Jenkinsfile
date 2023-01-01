@@ -4,6 +4,7 @@ pipeline {
     stage('Stage1') {
       steps {
         echo 'Hello'
+        git(url: 'https://git.shibboleth.net/git/java-opensaml', branch: '4.2.0')
       }
     }
 
@@ -17,5 +18,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    Secret = 'mysecret'
   }
 }
