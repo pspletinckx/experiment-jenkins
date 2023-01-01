@@ -14,7 +14,7 @@ pipeline {
       }
     }
 
-    stage('error') {
+    stage('Clone clone clone') {
       agent any
       steps {
         sh 'git clone https://git.shibboleth.net/git/java-opensaml'
