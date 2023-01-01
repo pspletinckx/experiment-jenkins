@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'docker:dind'
-    }
-
-  }
+  agent any
   stages {
     stage('Pull an image') {
       agent any
