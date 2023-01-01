@@ -7,6 +7,12 @@ pipeline {
   }
   stages {
     stage('Stage1') {
+      agent {
+        docker {
+          image 'alpine/git'
+        }
+
+      }
       steps {
         echo 'Hello'
         sh 'git clone https://git.shibboleth.net/git/java-opensaml'
