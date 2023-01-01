@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Pull an image') {
+    stage('Clone repo') {
       agent any
       steps {
-        sh 'docker pull mongo'
+        git(url: 'https://github.com/pspletinckx/eidas-build-train', branch: 'master')
       }
     }
 
