@@ -18,6 +18,7 @@ pipeline {
       agent any
       steps {
         sh 'git clone https://git.shibboleth.net/git/java-opensaml'
+        sh 'git status'
       }
     }
 
