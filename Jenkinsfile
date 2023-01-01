@@ -14,13 +14,15 @@ pipeline {
       }
     }
 
-    stage('Stage 2') {
-      steps {
-        timestamps() {
-          echo 'Messa'
-          echo 'Another meesage'
+    stage('') {
+      agent {
+        docker {
+          image 'alpine/git'
         }
 
+      }
+      steps {
+        sh 'git clone https://git.shibboleth.net/git/java-opensaml'
       }
     }
 
