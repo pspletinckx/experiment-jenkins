@@ -1,30 +1,12 @@
 pipeline {
-  agent any
+  agent {
+    docker { image 'node:16-alpine' }
+  }
   stages {
-    stage('Clone repo') {
-      parallel {
-        stage('Clone repo') {
-          agent any
-          steps {
-            git(url: 'https://github.com/pspletinckx/eidas-build-train.git', branch: 'master', credentialsId: 'githubPat2')
-            sh 'ls'
-          }
-        }
-
-        stage('Is docker here then') {
-          agent {
-            docker {
-              image 'docker:dind'
-            }
-
-          }
-          steps {
-            sh 'docker --version'
-          }
-        }
-
+    stage('Test') {
+      steps {
+        sh 'node --version'
       }
     }
-
   }
 }
