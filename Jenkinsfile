@@ -9,7 +9,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('is docker here') {
       steps {
         sh 'docker image ls'
       }
