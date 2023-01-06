@@ -10,6 +10,9 @@ pipeline {
     }
 
     stage('is docker here') {
+      agent {
+        docker { image 'docker:dind'}
+      }
       steps {
         sh 'docker image ls'
       }
