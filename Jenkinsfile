@@ -4,7 +4,7 @@ pipeline {
     stage('Clone repo') {
       agent any
       steps {
-        git(url: 'https://<access token>@github.com/pspletinckx/eidas-build-train', branch: 'master', credentialsId: 'githubPat')
+        git(url: 'git@github.com:pspletinckx/eidas-build-train.git', branch: 'master', credentialsId: 'githubPat')
       }
     }
 
